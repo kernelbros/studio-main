@@ -5,7 +5,7 @@ import Testimonials from "@/components/Testimonials";
 import Services from "@/components/Services";
 import ContactSection from "@/components/ContactSection";
 import LapepiniereLogo from "@/images/clients/lapepiniere.svg";
-import logoEnlace from "@/images/clients/Enlace.svg";
+import logoEnlace from "@/images/clients/enlace.svg";
 import logoivess from "@/images/clients/ivess.svg";
 
 export default function Home() {
