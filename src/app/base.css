@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fuente personalizada: Mona Sans */
+@font-face {
+  font-family: "Mona Sans";
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Mona-Sans.var.woff2") format("woff2");
+}
