@@ -10,17 +10,19 @@ const Services = () => {
   return (
     <>
       <SectionIntro
-        eyebrow="Services"
-        title="We help you identify, explore and respond to new opportunities."
+        eyebrow="Servicios"
+        title="Te ayudamos a identificar, explorar y aprovechar nuevas oportunidades."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          As long as those opportunities involve giving us money to re-purpose
-          old projects — we can come up with an endless number of those.
+          Nuestro equipo combina creatividad, experiencia técnica y visión
+          estratégica para transformar tus ideas en proyectos de alto impacto.
         </p>
       </SectionIntro>
+
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
+          {/* Imagen lateral */}
           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
             <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
               <StylizedImage
@@ -30,26 +32,25 @@ const Services = () => {
               />
             </FadeIn>
           </div>
-          {/* List item */}
+
+          {/* Lista de servicios */}
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-            <ListItem title="Web development">
-              We specialise in crafting beautiful, high quality marketing pages.
-              The rest of the website will be a shell that uses lorem ipsum
-              everywhere.
+            <ListItem title="Desarrollo web">
+              Creamos sitios modernos, rápidos y responsivos, diseñados para
+              transmitir tu identidad y conectar con tu audiencia.
             </ListItem>
-            <ListItem title="Application development">
-              We have a team of skilled developers who are experts in the latest
-              app frameworks, like Angular 1 and Google Web Toolkit.
+            <ListItem title="Desarrollo de aplicaciones">
+              Nuestro equipo domina las tecnologías más actuales para construir
+              aplicaciones escalables, seguras y de gran rendimiento.
             </ListItem>
             <ListItem title="E-commerce">
-              We are at the forefront of modern e-commerce development. Which
-              mainly means adding your logo to the Shopify store template we’ve
-              used for the past six years.
+              Diseñamos y optimizamos tiendas online que potencian tus ventas,
+              mejoran la experiencia de compra y hacen crecer tu negocio.
             </ListItem>
-            <ListItem title="Custom content management">
-              At Studio we understand the importance of having a robust and
-              customised CMS. That’s why we run all of our client projects out
-              of a single, enormous Joomla instance.
+            <ListItem title="Gestión de contenidos personalizada">
+              Implementamos sistemas de gestión de contenido flexibles y a
+              medida, que te permiten administrar tu web de forma sencilla y
+              eficiente.
             </ListItem>
           </List>
         </div>

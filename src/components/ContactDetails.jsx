@@ -6,6 +6,13 @@ import Link from "next/link";
 import SocialMedia from "./SocialMedia";
 
 const ContactDetails = () => {
+  // Datos de contacto por correo
+  const contactos = [
+    { nombre: "Andrés", correo: "andres@kernelbros.com.ar" },
+    { nombre: "Bruno", correo: "brunogallo@kernelbros.com.ar" },
+    { nombre: "Antinori", correo: "antinori@kernelbros.com.ar" },
+  ];
+
   return (
     <FadeIn>
       {/* Sección de oficinas */}
@@ -19,8 +26,7 @@ const ContactDetails = () => {
           </h2>
         </header>
         <p className="mt-6 text-base text-neutral-600">
-          ¿Prefiere hacerlo en persona? Visítenos en cualquiera de nuestras
-          oficinas.
+          ¿Querés hacerlo en persona? Nosotros no, pero por motivos legales tenemos que indicar las oficinas acá.
         </p>
         <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
       </section>
@@ -32,15 +38,11 @@ const ContactDetails = () => {
             id="contacto-title"
             className="font-display text-base font-semibold text-neutral-950"
           >
-            Envíenos un correo
+            Mandanos un correo
           </h2>
         </header>
         <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
-          {[
-            ["Andrés", "andres@kernelbros.com.ar"],
-            ["Bruno", "brunogallo@kernelbros.com.ar"],
-            ["Antinori", "antinori@kernelbros.com.ar"],
-          ].map(([nombre, correo]) => (
+          {contactos.map(({ nombre, correo }) => (
             <div key={correo}>
               <dt className="font-semibold text-neutral-950">{nombre}</dt>
               <dd>
@@ -80,7 +82,7 @@ const ContactDetails = () => {
             id="redes-title"
             className="font-display text-base font-semibold text-neutral-950"
           >
-            Síguenos
+            Seguinos
           </h2>
         </header>
         <SocialMedia className="mt-6" />

@@ -5,22 +5,27 @@ import FooterNavigation from "./FooterNavigation";
 import Logo from "./Logo";
 import Link from "next/link";
 
-const ArrowIcon = (props) => {
-  return (
-    <svg viewBox="0 0 16 6" aria-hidden="true" {...props}>
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M16 3 10 .5v2H0v1h10v2L16 3Z"
-      />
-    </svg>
-  );
-};
+//  Muevo el ícono a un componente aparte para reusarlo fácil
+const ArrowIcon = (props) => (
+  <svg viewBox="0 0 16 6" aria-hidden="true" {...props}>
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M16 3 10 .5v2H0v1h10v2L16 3Z"
+    />
+  </svg>
+);
 
 const NewsletterForm = () => {
   return (
-    <form className="max-w-sm">
+    <form
+      className="max-w-sm"
+      onSubmit={(e) => {
+        e.preventDefault();
+        //  acá va  lógica de suscripción ( fetch a Mailchimp, Resend, etc.)
+      }}
+    >
       <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
         Suscribite a nuestro newsletter
       </h2>
@@ -29,10 +34,17 @@ const NewsletterForm = () => {
         diseño y tecnología.
       </p>
       <div className="relative mt-6">
+        {/*  Accesibilidad: label oculto */}
+        <label htmlFor="newsletter-email" className="sr-only">
+          Correo electrónico
+        </label>
         <input
+          id="newsletter-email"
+          name="email"
           type="email"
           placeholder="Correo electrónico"
           autoComplete="email"
+          required
           aria-label="Correo electrónico"
           className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"
         />
@@ -40,7 +52,7 @@ const NewsletterForm = () => {
           <button
             type="submit"
             aria-label="Enviar"
-            className="flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-950 text-white transition hover:bg-neutral-800"
+            className="flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-950 text-white transition hover:bg-neutral-800 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
           >
             <ArrowIcon className="w-4" />
           </button>
